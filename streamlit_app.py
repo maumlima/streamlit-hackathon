@@ -7,6 +7,7 @@ import streamlit as st
 from matplotlib import image
 from run_eval import ret
 from model_unet import HackathonModel
+import torch
 
 """
 # Welcome to Silos Detect by Brasil'IA
