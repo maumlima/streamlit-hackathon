@@ -1,0 +1,7 @@
+altair
+pandas
+streamlit
+torch
+numpy
+pytorch_lightning
+matplotlib
