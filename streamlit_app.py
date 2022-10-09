@@ -25,7 +25,7 @@ if uploaded_file is not None:
 
     st.write("Silos presence probability {:.2f}".format(proba))
 
-    if (proba > 0.5)
+    if (proba > 0.5):
 
         input = defaultdict()
         input['img'] = torch.tensor(img[None, :])
