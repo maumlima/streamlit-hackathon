@@ -22,7 +22,7 @@ if uploaded_file is not None:
 
     st.write(ret(img)[0])
 
-    print(img.shape)
+    st.write(img.shape)
 
     # input = defaultdict()
     # input['img'] = img[None, :]
