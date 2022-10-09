@@ -23,7 +23,7 @@ if uploaded_file is not None:
     st.write(ret(img)[0])
 
     input = defaultdict()
-    input['img'] = img[None, :]
+    input['img'] = torch.tensor(img[None, :])
     model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
     segmented = model(input)
     #img = np.load(uploaded_file)
