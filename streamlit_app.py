@@ -21,12 +21,16 @@ uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     img = image.imread(uploaded_file)
 
-    st.write("Silos presence probability {:.2f}".format(ret(img)[0].item()))
+    proba = ret(img)[0].item()
 
-    input = defaultdict()
-    input['img'] = torch.tensor(img[None, :])
-    model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
-    segmented = model(input)
-    fig = plt.figure()
-    plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
-    st.write(fig)
+    st.write("Silos presence probability {:.2f}".format(proba))
+
+    if (proba > 0.5)
+
+        input = defaultdict()
+        input['img'] = torch.tensor(img[None, :])
+        model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
+        segmented = model(input)
+        fig = plt.figure()
+        plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')ixi
+        st.write(fig)
