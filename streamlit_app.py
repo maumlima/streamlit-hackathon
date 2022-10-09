@@ -32,5 +32,5 @@ if uploaded_file is not None:
         model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
         segmented = model(input)
         fig = plt.figure()
-        plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')ixi
+        plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
         st.write(fig)
