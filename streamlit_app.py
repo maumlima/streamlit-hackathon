@@ -1,4 +1,4 @@
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 import altair as alt
 import math
 import pandas as pd
@@ -22,15 +22,13 @@ if uploaded_file is not None:
 
     st.write(ret(img)[0])
 
-    st.write(img.shape)
+    input = defaultdict()
+    input['img'] = img[None, :]
+    model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
+    segmented = model(input)
+    #img = np.load(uploaded_file)
+    fig = plt.figure()
+    plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
+    st.write(fig)
 
-    # input = defaultdict()
-    # input['img'] = img[None, :]
-    # model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
-    # segmented = model(input)
-    # #img = np.load(uploaded_file)
-    # fig = plt.figure()
-    # plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
-    # st.write(fig)
-
-    # st.write(ret(img)[0])
+    st.write(ret(img)[0])
