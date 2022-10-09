@@ -20,16 +20,13 @@ uploaded_file = st.file_uploader("Choose a file")
     
 if uploaded_file is not None:
     img = image.imread(uploaded_file)
-    #img = np.load(uploaded_file)
 
-    st.write("Silos presence probability")
-    st.write(ret(img)[0].item())
+    st.write("Silos presence probability {:.2f}".format(ret(img)[0].item()))
 
     input = defaultdict()
     input['img'] = torch.tensor(img[None, :])
     model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
     segmented = model(input)
-    #img = np.load(uploaded_file)
     fig = plt.figure()
     plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
     st.write(fig)
