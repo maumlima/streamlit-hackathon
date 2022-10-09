@@ -20,4 +20,4 @@ with st.echo(code_location='below'):
         img = image.imread(uploaded_file)
         #img = np.load(uploaded_file)
 
-        st.write(ret(img)[0])
+        st.write(ret(img)[0][0])
