@@ -22,10 +22,6 @@ if uploaded_file is not None:
 
     st.write(ret(img)[0])
 
-
-"""
-## Segmentation problem:
-"""
     input = defaultdict()
     input['img'] = img[None, :]
     model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
