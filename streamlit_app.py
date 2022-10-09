@@ -26,9 +26,6 @@ if uploaded_file is not None:
 """
 ## Segmentation problem:
 """
-uploaded_file = st.file_uploader("Choose a file")
-
-if uploaded_file is not None:
     img = image.imread(uploaded_file)
     input = defaultdict()
     input['img'] = img[None, :]
