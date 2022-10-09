@@ -8,7 +8,7 @@ from matplotlib import image
 from run_eval import ret
 from model_unet import HackathonModel
 import torch
-import matplotlib.pyplot as
+import matplotlib.pyplot as plt
 
 """
 # Welcome to Silos Detect by Brasil'IA
