@@ -33,5 +33,3 @@ if uploaded_file is not None:
     fig = plt.figure()
     plt.imshow(segmented.cpu().detach().numpy(), cmap='Greys')
     st.write(fig)
-
-    st.write(ret(img)[0])
