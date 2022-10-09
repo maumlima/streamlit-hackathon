@@ -10,14 +10,19 @@ from run_eval import ret
 """
 # Welcome to Silos Detect by Brasil'IA
 
-Classification problem:
+## Classification problem:
 """
 
-with st.echo(code_location='below'):
-    uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file")
     
-    if uploaded_file is not None:
-        img = image.imread(uploaded_file)
-        #img = np.load(uploaded_file)
+if uploaded_file is not None:
+    img = image.imread(uploaded_file)
+    #img = np.load(uploaded_file)
 
-        st.write(ret(img)[0])
+    st.write(ret(img)[0])
+
+
+"""
+## Segmentation problem:
+"""
+
