@@ -6,7 +6,7 @@ import numpy as np
 import streamlit as st
 from matplotlib import image
 from run_eval import ret
-from model_unet import HachathonModel
+from model_unet import HackathonModel
 
 """
 # Welcome to Silos Detect by Brasil'IA
@@ -31,7 +31,7 @@ if uploaded_file is not None:
     img = image.imread(uploaded_file)
     input = defaultdict()
     input['img'] = img[None, :]
-    model = HachathonModel.load_from_checkpoint("model_weights/unet.ckpt")
+    model = HackathonModel.load_from_checkpoint("model_weights/unet.ckpt")
     segmented = model(input)
     #img = np.load(uploaded_file)
     fig = plt.figure()
